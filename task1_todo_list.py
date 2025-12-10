@@ -13,7 +13,7 @@ def add_task():
     task = entry.get().strip()
     if task:
         tasks.append(task)
-        listbox.insert(tk.END, f"⬜ {task}")
+        listbox.insert(tk.END, f" {task}")
         entry.delete(0, tk.END)
     else:
         messagebox.showwarning("Empty Task", "Please type something!")
@@ -31,7 +31,7 @@ def mark_done():
         index = listbox.curselection()[0]
         task_text = tasks[index]
         listbox.delete(index)
-        listbox.insert(index, f"✅ {task_text} (Done)")
+        listbox.insert(index, f" {task_text} (Done)")
     except:
         messagebox.showwarning("No Selection", "Select a task first!")
 
