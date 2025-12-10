@@ -21,14 +21,14 @@ tk.Label(root, textvariable=result_var, font=("Arial", 16), bg="#1e272e", fg="#d
 
 def play(user_choice):
     global user_score, comp_score
-    choices = ["Rock 🪨", "Paper 📄", "Scissors ✂️"]
+    choices = ["Rock ", "Paper ", "Scissors "]
     comp_choice = random.choice(choices)
     
     if user_choice == comp_choice:
         result = "Tie! Both chose " + user_choice
-    elif (user_choice == "Rock 🪨" and comp_choice == "Scissors ✂️") or \
-         (user_choice == "Paper 📄" and comp_choice == "Rock 🪨") or \
-         (user_choice == "Scissors ✂️" and comp_choice == "Paper 📄"):
+    elif (user_choice == "Rock " and comp_choice == "Scissors ") or \
+         (user_choice == "Paper " and comp_choice == "Rock ") or \
+         (user_choice == "Scissors " and comp_choice == "Paper "):
         result = "You Win! " + user_choice + " beats " + comp_choice
         user_score += 1
     else:
@@ -50,9 +50,9 @@ def reset():
 frame = tk.Frame(root, bg="#1e272e")
 frame.pack(pady=10)
 
-tk.Button(frame, text="Rock 🪨", font=("Arial", 14), bg="#353b48", fg="#dcdde1", command=lambda: play("Rock 🪨")).pack(side="left", padx=10)
-tk.Button(frame, text="Paper 📄", font=("Arial", 14), bg="#353b48", fg="#dcdde1", command=lambda: play("Paper 📄")).pack(side="left", padx=10)
-tk.Button(frame, text="Scissors ✂️", font=("Arial", 14), bg="#353b48", fg="#dcdde1", command=lambda: play("Scissors ✂️")).pack(side="left", padx=10)
+tk.Button(frame, text="Rock ", font=("Arial", 14), bg="#353b48", fg="#dcdde1", command=lambda: play("Rock ")).pack(side="left", padx=10)
+tk.Button(frame, text="Paper ", font=("Arial", 14), bg="#353b48", fg="#dcdde1", command=lambda: play("Paper ")).pack(side="left", padx=10)
+tk.Button(frame, text="Scissors ", font=("Arial", 14), bg="#353b48", fg="#dcdde1", command=lambda: play("Scissors ")).pack(side="left", padx=10)
 
 tk.Button(root, text="Reset Scores", font=("Arial", 14), bg="#eb4d4b", fg="white", command=reset).pack(pady=10)
 
